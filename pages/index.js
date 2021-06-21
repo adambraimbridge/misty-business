@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import galleryData from './gallery'
+import Gallery from './gallery'
 
 export default function Home() {
   return (
@@ -26,23 +26,7 @@ export default function Home() {
 
       </main>
 
-      <div className={styles.gallery_container}>
-        {galleryData.map((gallery) => (
-          <div className={styles.gallery_div}>
-            {/* <h2>{gallery.date}</h2>
-            <h3>{gallery.title}</h3>
-            <p>{gallery.description}</p> */}
-            <div>
-              {gallery.filenames.map(filename => {
-                const src = `/photos/${filename}`
-                return (               
-                  <div><img src={src} alt="Sea Mist" /></div>
-                )
-              })}
-            </div>
-          </div>
-        ))}
-      </div>
+      <Gallery />
 
       <footer className={styles.footer}>
         <a href="https://twitter.com/seamistress" target="_blank" rel="noopener noreferrer">@seamistress &#x2197;</a> &middot;

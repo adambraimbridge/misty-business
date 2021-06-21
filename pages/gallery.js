@@ -1,3 +1,5 @@
+import styles from '../styles/Home.module.css'
+
 const galleryData = [
   {
     date: 2021,
@@ -853,4 +855,24 @@ const galleryData = [
   }
 ]
 
-export default galleryData
+export default function Gallery() {
+  return (
+    <div className={styles.gallery_container}>
+      {galleryData.map((gallery) => (
+        <div className={styles.gallery_div}>
+          {/* <h2>{gallery.date}</h2>
+          <h3>{gallery.title}</h3>
+          <p>{gallery.description}</p> */}
+          <div>
+            {gallery.filenames.map(filename => {
+              const src = `/photos/${filename}`
+              return (               
+                <div><img src={src} alt="Sea Mist" /></div>
+              )
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
