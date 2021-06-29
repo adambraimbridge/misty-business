@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 const galleryData = [
   {
@@ -867,7 +868,7 @@ export default function Gallery() {
             {gallery.filenames.map(filename => {
               const src = `/photos/${filename}`
               return (               
-                <div><img src={src} alt="Sea Mist" loading="lazy" /></div>
+                <div><Image src={src} alt="Sea Mist" loading="lazy" placeholder="blur" /></div>
               )
             })}
           </div>
