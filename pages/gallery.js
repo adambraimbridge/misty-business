@@ -859,25 +859,27 @@ const galleryData = [
 export default function Gallery() {
   return (
     <div className={styles.gallery_container}>
-      {galleryData.map((gallery) => (
-        <div className={styles.gallery_div}>
+      {galleryData.map((gallery, index) => (
+        <div key={"gallery_" + index}>
           {/* <h2>{gallery.date}</h2>
           <h3>{gallery.title}</h3>
           <p>{gallery.description}</p> */}
-          <div>
+          <>
             {gallery.filenames.map(filename => {
               const src = `/photos/${filename}`
-              return (
-                <Image
-                  alt="Sea Mist"
-                  src={src}
+              return (               
+                <Image 
+                  key={filename}
+                  src={src} 
+                  alt="Sea Mist" 
+                  width="500" 
+                  height="500"
+                  placeholder="blur"
                   layout="responsive"
-                  width={700}
-                  height={475}
                 />
               )
             })}
-          </div>
+          </>
         </div>
       ))}
     </div>
