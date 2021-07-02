@@ -129,6 +129,6 @@
 }
 
 .gallery_container .gallery_div  {
-  clear: both;
-  padding-top: 4rem;
+  display:inline-block;
+  padding-bottom: 4rem;
 }
