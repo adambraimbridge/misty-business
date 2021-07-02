@@ -867,8 +867,14 @@ export default function Gallery() {
           <div>
             {gallery.filenames.map(filename => {
               const src = `/photos/${filename}`
-              return (               
-                <div><Image src={src} alt="Sea Mist" loading="lazy" placeholder="blur" /></div>
+              return (
+                <Image
+                  alt="Sea Mist"
+                  src={src}
+                  layout="responsive"
+                  width={700}
+                  height={475}
+                />
               )
             })}
           </div>
