@@ -122,17 +122,12 @@
 }
 
 .gallery_container .gallery_div  {
-  display: inline-block;
   padding-bottom: 4rem;
-  position: relative;
-  width: 100%;
 }
 
 .gallery_div .gallery_image {
-  display: block;
-  margin: 0.1rem;
-  width: 100%;
-  height: 95vh;
-  float: left;
-  position: relative;
+  margin: 0.05rem;
 }
+/*  
+  position: relative;
+} */
