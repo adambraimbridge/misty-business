@@ -121,14 +121,18 @@
   }
 }
 
-.gallery_container img {
-  margin:0.1rem;
-  max-width: 100%;
-  max-height: 95vh;
-  float: left;
+.gallery_container .gallery_div  {
+  display: inline-block;
+  padding-bottom: 4rem;
+  position: relative;
+  width: 100%;
 }
 
-.gallery_container .gallery_div  {
-  display:inline-block;
-  padding-bottom: 4rem;
+.gallery_div .gallery_image {
+  display: block;
+  margin: 0.1rem;
+  width: 100%;
+  height: 95vh;
+  float: left;
+  position: relative;
 }

@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function Gallery() {
   return (
     <div className={styles.gallery_container}>
-      {galleryData.map((gallery, index) => (
+      {galleryData.slice(0,2).map((gallery, index) => (
         <div key={"gallery_" + index}>
           <h5>{gallery.date}</h5>
           <h2>{gallery.title}</h2>
@@ -14,12 +14,18 @@ export default function Gallery() {
             {gallery.filenames.map(filename => {
               const src = `/photos/${filename}`
               return (
-                <a key={filename} target="_blank" href={src}>
-                  <img
+                <a className={styles.gallery_image} key={filename} target="_blank" href={src}>
+                  <Image
+                    alt={filename}
+                    src={src}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                  {/* <img
                     src={src}
                     alt={filename}
                     loading="lazy"
-                  />
+                  /> */}
                 </a>
               )
             })}
