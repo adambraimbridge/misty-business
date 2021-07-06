@@ -122,12 +122,21 @@
 }
 
 .gallery_container .gallery_div  {
+  position: relative;
   padding-bottom: 4rem;
 }
 
 .gallery_div .gallery_image {
-  margin: 0.05rem;
-}
-/*  
   position: relative;
-} */
+  display: block;
+  border: 1px solid white;
+}
+
+.gallery_div .gallery_image_portrait {
+  height: 95vh;
+}
+
+.gallery_div .gallery_image_portrait img {
+  width: auto !important;
+  min-width: auto !important;
+}

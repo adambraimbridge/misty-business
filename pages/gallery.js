@@ -11,15 +11,24 @@ export default function Gallery() {
           <h2>{gallery.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: gallery.description }}></div>
           <div className={styles.gallery_div}>
-            {gallery.filenames.map((filename, imageIndex) => {
+            {gallery.importedImages.map((image, imageIndex) => {
+              const orientation = image.width > image.height ? 'landscape' : 'portrait'
               return (
-                <a className={styles.gallery_image} key={`g${galleryIndex}i${imageIndex}`} target="_blank" href={filename.src}>
+                <a 
+                  target="_blank" 
+                  className={`
+                    ${styles.gallery_image} 
+                    ${orientation === 'portrait' ?  styles.gallery_image_portrait : ''}
+                  `}
+                  key={`g${galleryIndex}i${imageIndex}`} 
+                  href={image.src}
+                >
                   <Image
-                    alt={filename}
-                    src={filename}
-                    layout="responsive"
-                    placeholder="blur"
-                    objectFit="contain"
+                    placeholder='blur'
+                    alt={image.src}
+                    src={image}
+                    objectFit={orientation === 'landscape' ? 'contain' : null}
+                    layout={orientation === 'landscape' ? 'responsive' : 'fill'}
                   />
                 </a>
               )
